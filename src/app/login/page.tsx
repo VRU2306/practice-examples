@@ -43,7 +43,7 @@ export default function LoginPage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-1">
             <img className="h-20 w-20" src="/signup.png"></img>
-            <h1 className="text-3xl mb-4">Signup Page</h1>
+            <h1 className="text-3xl mb-4">Login Page</h1>
             <div className="flex flex-col">
                 <label htmlFor="email">Email</label>
                 <input
