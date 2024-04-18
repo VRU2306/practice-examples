@@ -30,7 +30,7 @@ function SignUpPage() {
             setLoading(true);
             const response = await axios.post("/api/users/signup", user);
             console.log("Signup success", response.data);
-            router.push("/login");
+            router.push("/dashboard");
 
         } catch (error: any) {
             console.log("Signup failed", error.message);
@@ -42,11 +42,12 @@ function SignUpPage() {
     }
     return <>
         <div className="flex flex-col items-center justify-center min-h-screen py-1">
-            <h1 className="text-3xl mb-4">Signup Page</h1>
+            <img className="h-20 w-20" src="/signup.png"></img>
+            <h1 className="text-3xl mb-4">Login Page</h1>
             <div className="flex flex-col">
                 <label htmlFor="username" >Username</label>
                 <input
-                    className="p-2 w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+                    className="p-2 md:w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
                     id="username"
                     type="text"
                     value={user.username}
@@ -55,7 +56,7 @@ function SignUpPage() {
                 />
                 <label htmlFor="email">Email</label>
                 <input
-                    className="p-2  w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+                    className="p-2  md:w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
                     id="email"
                     type="email"
                     value={user.email}
@@ -64,7 +65,7 @@ function SignUpPage() {
                 />
                 <label htmlFor="password">Password</label>
                 <input
-                    className="p-2  w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+                    className="p-2  md:w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
                     id="password"
                     type="password"
                     value={user.password}
@@ -75,7 +76,7 @@ function SignUpPage() {
 
             <button
                 onClick={onSignup}
-                className="p-2  w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">{buttonDisabled ? "No signup" : "Signup"}</button>
+                className="p-2 sm:w-48 md:w-96 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 disabled:cursor-not-allowed" disabled={buttonDisabled}>Signup</button>
             <Link href="/login">Visit login page</Link>
         </div>
 
