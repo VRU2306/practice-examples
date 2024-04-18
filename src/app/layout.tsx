@@ -21,8 +21,11 @@ export default function RootLayout({
           rel="icon"
           href="/icon.ico"
         />
-</head>
-      <body className={inter.className}>{children}</body>
+      </head>
+      
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   );
 }
