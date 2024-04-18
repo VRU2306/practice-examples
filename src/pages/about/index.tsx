@@ -1,8 +1,9 @@
 
-import { Metadata } from "next";
+import { useRouter } from "next/router";
 import "../../../styles/globals.css";
 import Head from 'next/head';
 export default function About({ message }: any) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -12,6 +13,7 @@ export default function About({ message }: any) {
           href="/icon.ico"
         />
       </Head>
+      <button className="bg-blue-800 p-2  rounded-sm" onClick={() => { router.push("/profile") }}>Back to Profile</button>
       <div className="flex flex-col bg-back-800 text-white mx-3 w-100">
         <table className="table-auto">
           <thead>
