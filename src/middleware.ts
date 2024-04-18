@@ -29,5 +29,7 @@ export const config = {
     '/profile/:path*',
     '/login',
     '/signup',
+    '/about',
+    '/about/:path*'
   ]
 }
